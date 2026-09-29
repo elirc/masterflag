@@ -1,0 +1,285 @@
+@import '../mixins/custom-scrollbar';
+.custom-scroll {
+  @include customScroll()
+}
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+.invalid .value-editor .hljs {
+  border: 2px solid $danger;
+}
+.value-editor {
+  position: relative;
+  textarea,
+  .hljs {
+    padding: $input-padding-lg;
+    line-height: $line-height-lg;
+  }
+  &.code-medium {
+    .hljs {
+      padding: $input-padding;
+    }
+  }
+  textarea {
+    min-height: 50px;
+    padding-bottom: 5px;
+    text-indent: 10px;
+  }
+  code {
+    outline-color: transparent !important;
+  }
+  .select-language {
+    position: absolute;
+    top: -24px;
+    right: 0;
+    .active {
+      span {
+        margin: 0;
+        opacity: 1;
+      }
+      .language-icon {
+        color: $body-color;
+      }
+    }
+    span {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: $text-icon-light-grey;
+      cursor: pointer;
+      font-size: $font-caption-sm;
+      line-height: $line-height-xxsm;
+      &.active {
+        color: $body-color;
+        font-weight: 500;
+      }
+      &.primary {
+        color: $primary !important;
+      }
+    }
+  }
+}
+.hljs {
+  a {
+    color: white !important;
+    text-decoration: underline;
+    .hljs-regexp,
+    .hljs-comment {
+      color: white !important;
+    }
+  }
+  cursor: text;
+  outline: none;
+  font-size: 17px;
+  display: block;
+  overflow-x: auto;
+  @include customScrollDark();
+  padding: 0.5em;
+  background: $code-bg;
+  border-radius: $border-radius;
+  border: 1px solid $basic-alpha-8;
+  &.no-pad {
+    margin-bottom: 0;
+  }
+  &-switch {
+    font-size: $font-sm;
+    line-height: $line-height-sm;
+    padding-left: 12px;
+    color: $text-icon-light;
+    margin-bottom: 0;
+  }
+}
+.yaml {
+  .hljs-bullet {
+    color: #eee;
+  }
+  .hljs-attr {
+    color: #64c77c;
+  }
+  .hljs-string {
+    color: #4c96ec;
+  }
+}
+.hljs-container {
+  position: relative;
+  &:hover {
+    .hljs-docs {
+      opacity: 1;
+    }
+  }
+}
+
+.hljs-docs {
+  position: absolute;
+  opacity: 0;
+  top: 32px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    > div {
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+.hljs-header {
+  user-select: none;
+  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  background-color: $code-btn-bg;
+  font-family: $font-family-header;
+  overflow: hidden;
+  @include transition(all 0.2s ease-in-out);
+  color: $btn-code-button-color;
+  display: inline-block;
+  line-height: $line-height-xsm;
+  font-weight: bold;
+  font-size: $font-caption-sm;
+  padding: 7px 12px;
+  border-radius: $border-radius-sm;
+  margin-right: 5px;
+  margin-bottom: calc($input-padding-y / 2);
+  .hljs-description {
+    color: $code-btn-description-color;
+  }
+  .hljs-icon {
+    padding-left: 6px;
+    &-left {
+      padding-right: 6px;
+    }
+  }
+  svg {
+    vertical-align: sub;
+  }
+}
+
+.hljs {
+  color: $code-color;
+  padding: 18px;
+}
+
+.json {
+  border: none;
+}
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-link,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: $info;
+}
+
+.hljs-code,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-attribute,
+.hljs-name,
+.hljs-variable {
+  color: $warning;
+}
+
+.hljs-params {
+  color: #b9b9b9;
+}
+
+.hljs-string {
+  color: $success;
+}
+
+.hljs-subst,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-symbol,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition {
+  color: $secondary400;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #7f7f7f;
+}
+.value-editor pre {
+  overflow: hidden;
+}
+.value-editor pre code {
+  height: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+code.txt {
+  font-size: $font-size-base;
+  font-weight: 500;
+  background: transparent !important;
+  border: 1px solid $input-border-color;
+  font-family: 'OpenSans', sans-serif;
+  color: $body-color;
+  &.empty {
+    font-weight: normal;
+    color: $input-placeholder-color;
+  }
+  &:focus,
+  &:focus.empty {
+    font-weight: 500;
+    color: $body-color;
+    border-color: $primary;
+  }
+}
+
+.dark {
+  code.txt {
+    &:focus,
+    &:focus.empty {
+      color: white !important;
+    }
+    &.empty {
+      color: rgba(210, 210, 210, 0.5) !important;
+    }
+    border-color: transparent;
+    background: $input-bg-dark !important;
+    color: white;
+  }
+  .hljs-header {
+    color: white;
+    path {
+      fill: white;
+    }
+  }
+  .value-editor .select-language span.active {
+    color: white;
+  }
+}
+
+code[contenteditable='false'].hljs {
+  cursor: default !important;
+  @include customScrollDark();
+}

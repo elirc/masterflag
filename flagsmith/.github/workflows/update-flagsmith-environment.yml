@@ -1,0 +1,41 @@
+name: Update Flagsmith Defaults
+
+on:
+  schedule:
+    - cron: 0 8 * * *
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: api
+
+jobs:
+  update_server_defaults:
+    runs-on: depot-ubuntu-latest
+    name: Update API Flagsmith Defaults
+    env:
+      FLAGSMITH_ON_FLAGSMITH_SERVER_API_URL: https://edge.api.flagsmith.com/api/v1
+      FLAGSMITH_ON_FLAGSMITH_SERVER_KEY: ${{ secrets.FLAGSMITH_ON_FLAGSMITH_SERVER_KEY }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install uv
+        uses: ./.github/actions/install-uv
+        with:
+          python-version: 3.12
+
+      - name: Install Dependencies
+        run: make install-packages
+
+      - name: Update defaults
+        run: uv run python manage.py updateflagsmithenvironment
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          commit-message: Update API Flagsmith Defaults
+          delete-branch: true
+          title: 'chore: Update Flagsmith environment document'
+          labels: api
+          token: ${{ secrets.UPDATE_ENVIRONMENT_DOCUMENT_WORKFLOW_GH_PAT }}

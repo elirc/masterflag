@@ -1,0 +1,10 @@
+static/*
+!static/.gitkeep
+**/staticfiles/*
+
+# SaaS only modules
+saml/
+features/workflows/logic/
+
+# Unit test coverage
+.coverage

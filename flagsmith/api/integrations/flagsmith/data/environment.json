@@ -1,0 +1,138 @@
+{
+  "api_key": "masked",
+  "feature_states": [
+    {
+      "django_id": 1091609,
+      "enabled": false,
+      "feature": {
+        "id": 91559,
+        "name": "api_usage_alerting",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "30d81348-9c9e-4494-a575-2a8e876143bc",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 966786,
+      "enabled": true,
+      "feature": {
+        "id": 96656,
+        "name": "api_limiting_stop_serving_flags",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "c849b8fa-7eb3-4ada-a2ef-92abc8acb015",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 966788,
+      "enabled": true,
+      "feature": {
+        "id": 96657,
+        "name": "api_limiting_block_access_to_admin",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "077c46f8-b5c4-40b8-bd03-5916f00381bf",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 882483,
+      "enabled": true,
+      "feature": {
+        "id": 98035,
+        "name": "api_usage_overage_charges",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "558369e9-d083-44c5-96f7-240c115b12b6",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 933832,
+      "enabled": false,
+      "feature": {
+        "id": 148935,
+        "name": "enable_feature_versioning_for_new_environments",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "1d584003-a0cc-46dd-aeea-30f392a4da80",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 907926,
+      "enabled": false,
+      "feature": {
+        "id": 149200,
+        "name": "sdk_metrics_labels",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": "",
+      "featurestate_uuid": "b6aacfaf-5b02-4b58-9156-f018ffa85c2d",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 1207975,
+      "enabled": true,
+      "feature": {
+        "id": 189491,
+        "name": "compress_dynamo_documents",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": "",
+      "featurestate_uuid": "e0d380a6-bdbc-4ad6-ae6f-b8b77d8beae6",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 1212320,
+      "enabled": false,
+      "feature": {
+        "id": 192793,
+        "name": "code_references_ui_stats",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "f976df2f-2341-4623-8425-d6eda23a2ebc",
+      "multivariate_feature_state_values": []
+    },
+    {
+      "django_id": 1229327,
+      "enabled": false,
+      "feature": {
+        "id": 195393,
+        "name": "get_current_api_usage_deprecated",
+        "type": "STANDARD"
+      },
+      "feature_segment": null,
+      "feature_state_value": null,
+      "featurestate_uuid": "e7ed0d54-b17c-4df1-ab98-5f8dc9597127",
+      "multivariate_feature_state_values": []
+    }
+  ],
+  "id": 0,
+  "name": "Production",
+  "project": {
+    "hide_disabled_flags": false,
+    "id": 0,
+    "name": "Flagsmith API",
+    "organisation": {
+      "feature_analytics": false,
+      "id": 0,
+      "name": "Flagsmith",
+      "persist_trait_data": true,
+      "stop_serving_flags": false
+    },
+    "segments": []
+  },
+  "use_identity_composite_key_for_hashing": true
+}
