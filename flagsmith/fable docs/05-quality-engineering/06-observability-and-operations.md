@@ -9,7 +9,7 @@
 | SDK read path | request logs enriched with `environment_id` at auth time; env metrics querysets | [authentication.py#L42-L46](../../api/environments/authentication.py#L42-L46), [environments/metrics.py](../../api/environments/metrics.py) |
 | Async pipeline | task rows (state queryable via SQL); priorities; structlog events per domain | [environments/tasks.py](../../api/environments/tasks.py) |
 | Webhooks | retry/backoff logs; failure email after final retry | [webhooks/tasks.py#L23-L25](../../api/webhooks/tasks.py#L23-L25) |
-| Dashboard | Sentry browser SDK; Amplitude product analytics; API baggage headers carrying session ids | [service.ts#L42-L51](../../frontend/common/service.ts#L42-L51) |
+| Dashboard | Sentry browser SDK; Amplitude product analytics; API baggage headers carrying session ids | [service.ts#L40-L49](../../frontend/common/service.ts#L40-L49) |
 | Deploys | health checks (django-health-check), one-shot migrate container gating app start | [docker-compose.yml#L55-L67](../../docker-compose.yml#L55-L67) |
 
 ## "How would I know this broke?" — per key flow

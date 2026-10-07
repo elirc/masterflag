@@ -18,7 +18,7 @@ Sharp edges here: no Server Components, no Suspense-for-data — this is a class
 
 Model: a normalized **cache keyed by endpoint+args**, with declarative invalidation. `providesTags` labels what a query holds; `invalidatesTags` on a mutation marks labels dirty; dirty queries with mounted subscribers refetch. That's the entire magic.
 
-- Base service: [service.ts#L63-L69](../../frontend/common/service.ts#L63-L69) — one `createApi`, endpoints injected per domain file (`injectEndpoints`, [useFeatureState.ts#L19-L69](../../frontend/common/services/useFeatureState.ts#L19-L69)) — code-splitting-friendly and keeps one cache.
+- Base service: [service.ts#L62-L66](../../frontend/common/service.ts#L62-L66) — one `createApi`, endpoints injected per domain file (`injectEndpoints`, [useFeatureState.ts#L19-L69](../../frontend/common/services/useFeatureState.ts#L19-L69)) — code-splitting-friendly and keeps one cache.
 - Auth: `prepareHeaders` ([service.ts#L23-L40](../../frontend/common/service.ts#L23-L40)) attaches the token except on auth endpoints — cross-cutting concern solved once.
 - Escape hatch: `queryFn` ([useFeatureState.ts#L30-L51](../../frontend/common/services/useFeatureState.ts#L30-L51)) for composite requests — powerful, and where the N+1 fan-out lives. Custom `queryFn`s bypass the simple declarative path; treat them as review hot-spots.
 - Imperative dispatch wrappers ([useFeatureState.ts#L71-L93](../../frontend/common/services/useFeatureState.ts#L71-L93)) let non-hook code (legacy stores) call endpoints — a migration affordance.

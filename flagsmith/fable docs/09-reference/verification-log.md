@@ -2,6 +2,8 @@
 
 What was actually inspected while building this curriculum, on what basis claims are made, and what remains unverified. Date: **2026-07-09**, working tree at `flagsmith` repo (branch `main`, version 2.68.0 per [api/pyproject.toml](../../api/pyproject.toml)). Platform: Windows 11; **no services were run** — Docker/DB/dev servers were not started, so all run/serve/test commands are marked __inferred__ (read from Makefiles, package.json, READMEs, CI workflows) rather than __verified__.
 
+> **Status note (2026-10-06, frozen record).** The log is kept as written for the 2026-07-09 pass. A static re-check on 2026-10-06 (no services, builds or tests) resolved every relative link under `fable docs/` and re-read sampled anchors in the fast track and key flows (SDK auth, `SDKFeatureStates`, versioning service, `FeatureState.__gt__`, toggle hooks, permissions, audit hook): they still match. Corrections made in place: `api/environments/tasks.py` `process_environment_update` is L31-L45 (the fast track had L56-L69); the RTK `createApi` call in `frontend/common/service.ts` is L62-L66 (file is 67 lines, so `#L63-L69` overran it), with the focus/reconnect flags at L56-L57 and the Amplitude baggage block at L40-L49. `frontend/bin/env.js` is referenced by `frontend/package.json` (`"env": "node ./bin/env.js"`) but is **not tracked in this snapshot**, so links to it were replaced with plain-text references. Version (`api/pyproject.toml` 2.68.0) and the 1061-line `feature-list-store.ts` still hold; the tracked tree is now 3,256 files (frontend 1,062, api 1,711), up from the `rg --files` counts below partly because this curriculum is now tracked.
+
 ## Files read in full or in targeted sections
 
 | Area | Files (line ranges read) | Notes |

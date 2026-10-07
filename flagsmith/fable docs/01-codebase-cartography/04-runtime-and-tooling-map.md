@@ -22,7 +22,7 @@ Boundary rule worth quoting: **browser code lives in `frontend/web/`, shareable 
 | Jest | [frontend/jest.config.js](../../frontend/jest.config.js) | Unit tests in `__tests__/` dirs |
 | Playwright | [frontend/playwright.config.ts](../../frontend/playwright.config.ts), tests in [frontend/e2e/tests/](../../frontend/e2e/tests/) | E2E vs a real API on :8000; retries orchestrated by [e2e/run-with-retry.ts](../../frontend/e2e/run-with-retry.ts) |
 | ESLint + husky | repo hooks via `make install-hooks` | `npm run lint` |
-| Env selection | [frontend/bin/env.js](../../frontend/bin/env.js) copies `env/project_<ENV>.js` → `common/project.js`; runtime overrides via `globalThis.projectOverrides` | Build-time env with deploy-time escape hatch — a pattern worth stealing |
+| Env selection | `frontend/bin/env.js` (invoked by `npm run env`, [frontend/package.json#L25](../../frontend/package.json#L25), but not tracked in this snapshot — behavior described from upstream docs, treat as inferred) copies `env/project_<ENV>.js` → `common/project.js`; runtime overrides via `globalThis.projectOverrides` | Build-time env with deploy-time escape hatch — a pattern worth stealing |
 
 ## API toolchain
 

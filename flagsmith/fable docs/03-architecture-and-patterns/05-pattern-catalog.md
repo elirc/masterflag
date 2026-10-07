@@ -107,7 +107,7 @@ Sixteen cards. The goal is **recognition** — seeing the shape in any codebase 
 ## Pattern 11: Single API slice, endpoints injected per domain
 
 **Problem:** one HTTP client config, many feature areas, code-splitting.
-**Shape:** `createApi` once ([service.ts#L63-L69](../../frontend/common/service.ts#L63-L69)); each domain file `injectEndpoints` ([useFeatureState.ts#L19-L24](../../frontend/common/services/useFeatureState.ts#L19-L24)).
+**Shape:** `createApi` once ([service.ts#L62-L66](../../frontend/common/service.ts#L62-L66)); each domain file `injectEndpoints` ([useFeatureState.ts#L19-L24](../../frontend/common/services/useFeatureState.ts#L19-L24)).
 **Why it works:** auth/base-url/retry policy defined once; tag namespace shared; bundles stay lean.
 **Failure modes:** tag-name collisions across 60+ service files; duplicate endpoint names.
 **Avoid when:** genuinely separate backends with different auth (second `createApi`).
